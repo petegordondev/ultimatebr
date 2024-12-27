@@ -49,6 +49,9 @@ INSTALLED_APPS = [
 
     # REST framework
     'rest_framework',
+
+    # Custom apps
+    'dashboard',
 ]
 
 MIDDLEWARE = [
