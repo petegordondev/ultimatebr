@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',  # Required for Allauth
+    'ultimatebr.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'ultimatebr.urls'
@@ -116,6 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Email settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # Using console backend for development
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
