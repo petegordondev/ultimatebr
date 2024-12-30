@@ -71,7 +71,10 @@ ROOT_URLCONF = 'ultimatebr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [
+            BASE_DIR / 'templates',
+            BASE_DIR / 'templates/allauth',  # Explicitly include the allauth folder
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -159,3 +162,5 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'  # Change to 'mandatory' for production
 ACCOUNT_EMAIL_REQUIRED = True
 LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+TEMPLATES[0]['OPTIONS']['debug'] = True
