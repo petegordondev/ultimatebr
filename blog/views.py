@@ -20,8 +20,9 @@ def create_blog_post(request):
     return render(request, 'blog/create_blog_post.html', {'form': form})
 
 def blog_list(request):
-    published_posts = Post.objects.filter(is_published=True).order_by('-created_at')  # Published posts
-    unpublished_posts = Post.objects.filter(is_published=False).order_by('-created_at')  # Unpublished posts
+    user = request.user
+    published_posts = Post.objects.filter(is_published=True).order_by('-created_at')  # All published posts
+    unpublished_posts = Post.objects.filter(is_published=False, author=user).order_by('-created_at')  # User's unpublished posts
     return render(request, 'blog/blog_list.html', {
         'published_posts': published_posts,
         'unpublished_posts': unpublished_posts,
