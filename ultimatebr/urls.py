@@ -23,5 +23,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', RedirectView.as_view(url='/dashboard/', permanent=False)),
     path('dashboard/', include('dashboard.urls')),
+    path('blog/', include('blog.urls')),
 
 ]
