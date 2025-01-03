@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote Panel</title>
+</head>
+<body>
+    <h1>Vote</h1>
+    <h2>{{ poll.title }}</h2>
+    <p>Start Date: {{ poll.start_date }}</p>
+    <p>End Date: {{ poll.end_date }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            {% for item in poll.items.all %}
+                <li>{{ item.subject.name }}</li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

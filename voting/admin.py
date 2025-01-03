@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Subject, VotingItem, Poll
 
-# Register your models here.
+admin.site.register(Subject)
+admin.site.register(VotingItem)
+admin.site.register(Poll)

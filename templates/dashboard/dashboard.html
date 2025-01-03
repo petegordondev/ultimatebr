@@ -9,7 +9,7 @@
     <h1>Dashboard</h1>
     <nav>
         <ul>
-            <li><a href="{% url 'vote' %}">Vote</a></li>
+            <li><a href="{% url 'vote_panel' poll_id=1 %}">Vote</a></li> <!-- Updated to include poll.id -->
             <li><a href="{% url 'vote_history' %}">Vote History</a></li>
             <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
             <li><a href="{% url 'blog:create_blog_post' %}">Create Blog Post</a></li>
