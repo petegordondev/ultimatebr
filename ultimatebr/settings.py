@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
 
     # REST framework
     'rest_framework',
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
     # Custom apps
     'dashboard',
     'blog',
+    'voting',
 ]
 
 MIDDLEWARE = [

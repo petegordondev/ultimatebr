@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote History</title>
+</head>
+<body>
+    <h1>Vote History</h1>
+    <ul>
+        {% for vote in votes %}
+            <li>{{ vote.subject }} - {{ vote.vote }} - {{ vote.created_at }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

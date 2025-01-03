@@ -13,17 +13,17 @@ def create_blog_post(request):
             if not blog_post.category:
                 blog_post.category, _ = Category.objects.get_or_create(name='meta', slug='meta')
             blog_post.save()
-            return redirect('blog_list')  # Replace with your desired redirect
+            return redirect('post_list')  # Replace with your desired redirect
     else:
         form = BlogPostForm()
 
     return render(request, 'blog/create_blog_post.html', {'form': form})
 
-def blog_list(request):
+def post_list(request):
     user = request.user
     published_posts = Post.objects.filter(is_published=True).order_by('-created_at')  # All published posts
     unpublished_posts = Post.objects.filter(is_published=False, author=user).order_by('-created_at')  # User's unpublished posts
-    return render(request, 'blog/blog_list.html', {
+    return render(request, 'blog/post_list.html', {
         'published_posts': published_posts,
         'unpublished_posts': unpublished_posts,
     })

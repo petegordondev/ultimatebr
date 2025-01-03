@@ -6,7 +6,16 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>{{ welcome_message }}</h1>
+    <h1>Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'vote' %}">Vote</a></li>
+            <li><a href="{% url 'vote_history' %}">Vote History</a></li>
+            <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
+            <li><a href="{% url 'blog:create_blog_post' %}">Create Blog Post</a></li>
+        </ul>
+    </nav>
+    <!-- Other dashboard content -->
     <form action="{% url 'account_logout' %}" method="post">
         {% csrf_token %}
         <button type="submit">Logout</button>
